@@ -1,6 +1,6 @@
 # Image Filtering Microservice
 
-This project takes an app created by @grutt, adds to it by providing an API endpoint to serve the filtered image, and deploy it to the Cloud using AWS Elastic Beanstalk.
+This project takes an app created by Ursa's [@grutt](https://github.com/grutt/udacity-c2-image-filter) via Udacity, adds to it by providing an API endpoint to serve the filtered image, and deploy it to the Cloud using AWS Elastic Beanstalk.
 
 I'm responsible for the API endpoint code demarcated by '@TODO1' in the file src/server.ts as well as for the deployment of the app into the Cloud using AWS Elastic Beanstalk.
 
