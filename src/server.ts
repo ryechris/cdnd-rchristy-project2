@@ -28,7 +28,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
 
   /**************************************************************************** */
   app.get("/filteredimage/", ( req, res ) => {
-    let { image_url } = req.query;
+    let image_url: string = req.query.image_url;
 
     if ( !image_url ) {
       return res.status(400)
@@ -36,7 +36,10 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
     }
 
     filterImageFromURL(image_url).then((imgpath) => {
-      return res.status(200).sendFile(imgpath);
+      res.status(200).sendFile(imgpath, function () {
+        deleteLocalFiles([imgpath]);
+        return;
+      });
     }).catch((error) => {
       return res.status(500).send(error)}
     );
